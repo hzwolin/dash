@@ -158,6 +158,7 @@ graph = dcc.Graph()
 countries =df['City'].unique().tolist() 
 
 app =dash.Dash(external_stylesheets=[dbc.themes.SLATE])
+server= app.server
 
 dropdown = dcc.Dropdown(
     options=[
@@ -352,4 +353,4 @@ def update_heatmap(selected_cities, variable):
 
 
 if __name__ == '__main__':
-     app.run_server(port=8090)
+     app.run_server()
